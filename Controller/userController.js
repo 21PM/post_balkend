@@ -1,4 +1,5 @@
 const userModel = require("../model/userModel")
+
 const postModel = require("../model/PostModel")
 
 const signUp = async(req,res)=>{
