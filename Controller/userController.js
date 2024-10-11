@@ -65,7 +65,12 @@ const Login = async(req,res)=>{
     }
     try{
 
+        console.log(email);
+        
+
         const isValidUser = await userModel.findOne({email:email});
+        console.log(isValidUser);
+        
         if(!isValidUser){
             return res.status(400).json({
                 status:false,
