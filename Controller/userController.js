@@ -14,8 +14,7 @@ const signUp = async(req,res)=>{
     }
 
     try{
-        // console.log("email",email);
-        
+                
         const isAlaredy = await userModel.findOne({email:email});
         console.log(isAlaredy);
         
@@ -40,10 +39,12 @@ const signUp = async(req,res)=>{
             message:"data saved succesfsully"
         })
     }catch(e){
-
+        console.log(e);
+        
         return res.status(400).json({
             status:false,
-            message:"Sing up"
+            message:"Sing up",
+            error:e
         })
     }
 
@@ -84,9 +85,12 @@ const Login = async(req,res)=>{
         })
 
     }catch(e){
+        console.log(e);
+        
    return res.status(400).json({
         status:false,
-        message:"Login up"
+        message:"Login up",
+        error:e
     })
     }
 
@@ -121,9 +125,12 @@ const Addpost = async(req,res)=>{
         })
 
     }catch(e){
+        console.log(e);
+        
         return res.status(400).json({
             status:false,
-            message:"provide all details up"
+            message:"provide all details up",
+            error:e
         })
         
     }
